@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calendar App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .date {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .time-slot {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .time {
+      width: 100px;
+    }
+
+    .task {
+      flex-grow: 1;
+      margin-left: 10px;
+      padding: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="date">February 20, 2024</div>
+
+  <div class="time-slot">
+    <div class="time">9:00 AM</div>
+    <div class="task">Task 1</div>
+  </div>
+  <div class="time-slot">
+    <div class="time">10:00 AM</div>
+    <div class="task">Task 2</div>
+  </div>
+  <div class="time-slot">
+    <div class="time">11:00 AM</div>
+    <div class="task">Task 3</div>
+  </div>
+  <div class="time-slot">
+    <div class="time">12:00 PM</div>
+    <div class="task">Task 4</div>
+  </div>
+
+  <button class="button" onclick="addTask()">Add Task</button>
+</div>
+
+<script>
+  function addTask() {
+    var container = document.querySelector('.container');
+    var timeSlot = document.createElement('div');
+    timeSlot.className = 'time-slot';
+    timeSlot.innerHTML = '<div class="time">New Time</div><div class="task">New Task</div>';
+    container.insertBefore(timeSlot, container.lastElementChild);
+  }
+</script>
+
+</body>
+</html>
